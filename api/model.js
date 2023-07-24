@@ -16,8 +16,12 @@ const fieldSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
+    enum: ['text', 'number', 'checkbox', 'radio'], // Allowed values for the "type" field
   },
+  options: [{ type: String }], // Array of strings to store the options (labels) for checkboxes or radio buttons
+  // Other field properties...
 });
+
 
 // Define the Category schema
 const categorySchema = new mongoose.Schema({
