@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const dotenv=require('dotenv')
 
+dotenv.config()
 // Connect to your MongoDB database (replace 'mongodb://localhost/dynamic-form' with your MongoDB connection string)
-mongoose.connect('mongodb+srv://ashwath:59d0uJEhwBQ2sQf3@cluster0.9bhl8nt.mongodb.net/dynamicforms?retryWrites=true&w=majority&authMechanism=DEFAULT', {
-  useNewUrlParser: true,
+mongoose.connect(process.env.MONGO_URI,  {useNewUrlParser: true,
   useUnifiedTopology: true,
   
 });
